@@ -1,0 +1,1005 @@
+/* ===== Base ===== */
+:root{
+  --text: #0b0b0b;
+  --muted: #3a3a3a;
+  --bg: #ffffff;
+  --brand: #2563eb; /* blue-600 */
+  --radius: 999px;
+  --maxw: 1200px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: "Alata", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.35;
+}
+
+/* ===== Navigation ===== */
+.site-header {
+  padding: 18px 4vw;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 400;                 /* Alata has a single weight */
+  text-transform: lowercase;
+  opacity: .9;
+  letter-spacing: 0.02em;
+}
+
+.nav__link:hover { opacity: 1; }
+.nav__link--icon { display: inline-flex; align-items: center; }
+
+/* ===== Hero ===== */
+.hero {
+  display: grid;
+  place-items: center;
+  padding: 32px 4vw 64px;
+}
+
+.hero__inner {
+  width: 100%;
+  max-width: var(--maxw);
+  min-height: min(78vh, 760px);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero__copy { max-width: 720px; }
+
+.hero__title {
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.05;
+  margin: 0 0 18px 0;
+  font-weight: 400;                 /* keep natural Alata weight */
+  letter-spacing: -0.01em;
+}
+
+.hero__subtitle {
+  font-size: clamp(18px, 2.4vw, 28px);
+  color: var(--muted);
+  margin: 0 0 24px 0;
+  letter-spacing: 0.005em;
+}
+
+/* ===== Button ===== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  border-radius: 14px;
+  padding: 14px 22px;
+  font-weight: 400;                 /* avoid faux bold */
+  letter-spacing: 0.02em;
+}
+
+.button--primary {
+  background: var(--brand);
+  color: #fff;
+}
+
+.button--primary:hover { filter: brightness(0.95); }
+.button__icon { translate: 0 1px; }
+
+/* ===== Blob Photo ===== */
+/* Replace the previous .blob-photo rules with this: */
+.portrait {
+  width: clamp(240px, 32vw, 520px); /* min, fluid, max */
+  height: auto;
+  display: block;
+}
+
+/* keep the container alignment */
+.hero__figure {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 980px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .hero__figure { order: 2; }
+}
+
+/* ===== Section: Experience / Video ===== */
+.section {
+  padding: 56px 4vw;
+}
+
+.section-title {
+  font-size: clamp(36px, 6vw, 72px);
+  text-align: center;
+  margin: 0 0 28px 0;
+  font-weight: 400;           /* Alata: single weight */
+  letter-spacing: -0.01em;
+}
+
+.video-card {
+  margin: 0 auto;
+  width: min(960px, 92vw);
+  background: #efefef;
+  border-radius: 20px;
+  padding: 18px;
+  display: grid;
+  place-items: center;
+}
+
+.video-card__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* reserves space; prevents layout shift */
+  height: auto;
+  display: block;
+  border-radius: 14px;
+
+  /* make both poster and video crop like a background cover */
+  object-fit: cover;
+  object-position: center;
+  background: #000;       /* while loading */
+}
+
+
+/* Optional caption styling */
+.video-card__caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #3a3a3a;
+  text-align: center;
+}
+
+/* ===== Q&A section under the video ===== */
+.qa-section {
+  padding-top: 36px;
+}
+
+.qa-container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  gap: 28px;
+}
+
+.qa {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 18px 22px;
+}
+
+/* Alternate layout */
+.qa--media-left   { grid-template-columns: auto 1fr; }
+.qa--media-left .qa__media  { order: 1; }
+.qa--media-left .qa__content{ order: 2; }
+
+/* Typography */
+.qa__title {
+  margin: 0 0 8px 0;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 400;             /* Alata uses one weight */
+  letter-spacing: -0.01em;
+}
+
+.qa__body {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.6;
+}
+
+/* Thumbnails are already blob-shaped PNGs/SVGs */
+.qa__media {
+  margin: 0;
+  align-self: center;
+  /* no fixed width/height here; let the image define size */
+}
+
+.qa__media img {
+  display: block;
+  width: clamp(120px, 12vw, 180px); /* responsive size */
+  height: auto;                      /* keep original aspect ratio */
+  object-fit: contain;               /* preserve full blob silhouette */
+  /* remove any previous clip-path / border-radius fallbacks */
+}
+
+@supports not (clip-path: path("M0,0")) {
+  .qa__media img { border-radius: 50%; }
+}
+
+/* Spacing tweaks so it breathes under the video box */
+.section--experience + .qa-section .qa-container {
+  margin-top: 8px;
+}
+
+/* Responsive: single column on small screens */
+@media (max-width: 760px) {
+  .qa {
+    grid-template-columns: 1fr;
+  }
+  .qa--media-left .qa__media,
+  .qa--media-right .qa__media {
+    order: 2;                   /* keep images after text on mobile */
+    justify-self: start;
+  }
+}
+/* ===== Q&A layout: 60% text / 40% image ===== */
+.qa {
+  display: grid;
+  grid-template-columns: 60% 40%;  /* text : image */
+  align-items: center;
+  gap: 18px 26px;                  /* a touch more breathing room */
+}
+
+/* Alternate row where the image is on the left */
+.qa--media-left {
+  grid-template-columns: 40% 60%;  /* image : text */
+}
+
+/* Text block */
+.qa__content {
+  /* optional: keep paragraphs pleasantly readable inside the 60% column */
+  /* comment out if you prefer full column width */
+  max-width: 60ch;
+}
+
+/* Media block: make images larger and responsive */
+.qa__media {
+  margin: 0;
+  align-self: center;
+  width: clamp(200px, 24vw, 340px); /* larger thumbnails */
+}
+
+.qa__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;             /* preserves your pre-masked blob edges */
+}
+
+/* Mobile: stack and let the image size down gently */
+@media (max-width: 760px) {
+  .qa {
+    grid-template-columns: 1fr;
+  }
+  .qa--media-left .qa__media,
+  .qa--media-right .qa__media {
+    order: 2;                      /* keep image after text on small screens */
+    width: clamp(180px, 50vw, 280px);
+    justify-self: start;
+  }
+  .qa__content { max-width: 100%; }
+}
+/* ─────────────  INTERNSHIP EXPERIENCE  ───────────── */
+.internship { padding-block: 64px 48px; }
+
+.section-heading {
+  font-size: clamp(36px, 6vw, 72px);
+  margin: 0 0 40px 0;
+  font-weight: 400;            /* Alata has single weight */
+  text-align: center;
+}
+
+/* ── intro row (logo · copy · tools) ── */
+.internship__intro {
+  display: grid;
+  grid-template-columns: 160px 1fr 160px;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 56px;
+}
+
+.intro__logo img { width: 100%; height: auto; }
+
+.intro__copy p {
+  margin: 0;
+  line-height: 1.6;
+}
+.intro__copy .highlight { font-weight: 600; }
+
+/* simple three-point timeline */
+.timeline {
+  margin: 24px 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  position: relative;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #000;
+  opacity: .15;
+}
+.timeline li {
+  position: relative;
+  padding-top: 28px;
+  max-width: 180px;
+  font-size: 14px;
+}
+.timeline li::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  translate: -50% 0;
+  width: 12px; height: 12px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* tools list */
+.intro__tools { text-align: center; }
+.tools__title { margin: 0 0 12px 0; font-size: 16px; }
+.tools__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tools__list img { width: 36px; height: auto; }
+
+/* ── content blocks ── */
+.internship-block { margin-bottom: 64px; }
+
+.block__title {
+  font-size: clamp(32px, 4vw, 46px);
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.block__text {
+  margin: 0 0 24px 0;
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.block__media img { width: 100%; height: auto; border-radius: 8px; }
+
+/* gallery for wireframes / outcome */
+.block__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.block__gallery img {
+  width: clamp(120px, 28%, 240px);
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+
+/* ── responsive adjustments ── */
+@media (max-width: 880px) {
+  .internship__intro {
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+  }
+  .intro__tools { grid-column: 1 / -1; margin-top: 24px; }
+  .timeline { flex-direction: column; gap: 24px; }
+  .timeline::before { display: none; }
+}
+
+@media (max-width: 600px) {
+  .block__gallery img { width: clamp(140px, 44%, 220px); }
+}
+/* ── intro row improvements ──────────────────────────────── */
+.internship__intro{
+  /* centre the whole three-column grid */
+  max-width: var(--maxw);
+  margin-inline: auto;
+
+  /* nudge the logo / tools nearer to the copy on XL screens */
+  grid-template-columns: minmax(120px,160px) 1fr minmax(120px,160px);
+}
+
+/* keep the description column pleasantly narrow */
+.intro__copy{ max-width: 640px; }
+
+/* tighten the gap so the logo isn’t marooned far left */
+@media (min-width: 881px){ .internship__intro{ gap: 24px; } }
+/* ── Intro row: logo · tools · copy ───────────────────────── */
+.internship__intro{
+  /* centred container */
+  max-width: var(--maxw);
+  margin-inline: auto;
+
+  /* three columns  [logo] [tools] [text]  */
+  grid-template-columns: minmax(180px,220px)   /* bigger logo */
+                        minmax(140px,180px)    /* tools */
+                        1fr;                   /* copy */
+  gap: 24px;
+  align-items: start;
+}
+
+/* force column order regardless of HTML order */
+.intro__logo  { grid-column: 1; }
+.intro__tools { grid-column: 2; }
+.intro__copy  { grid-column: 3; }
+
+/* enlarge the logo image itself */
+.intro__logo img{
+  width: 100%;
+  height: auto;
+}
+
+/* keep tools icons evenly sized */
+.tools__list img{
+  height: 40px;            /* bump up if desired */
+  width: auto;
+}
+
+/* responsive: stack on ≤880 px, tools under logo */
+@media (max-width: 880px){
+  .internship__intro{
+    grid-template-columns: minmax(160px,200px) 1fr;
+  }
+  .intro__tools{ grid-column: 1 / -1; margin-top: 20px; }
+  .intro__copy { grid-column: 1 / -1; }
+}
+/* ──  INTRO GRID: left (logo+tools) · right (copy)  ───────────────── */
+.internship__intro{
+  /* full-width row that hugs the left edge, with site-padding */
+  max-width: none;
+  margin: 0;
+  padding-inline: 4vw;
+
+  /* two columns:  left ≈30% (logo+tools)   right = rest (copy)  */
+  grid-template-columns: minmax(280px, 30%) 1fr;
+  gap: 24px 40px;          /* row · column gap */
+  align-items: start;
+}
+
+/* bigger logo */
+.intro__logo{
+  grid-column: 1; grid-row: 1;
+  text-align: center;
+}
+.intro__logo img{
+  width: 100%;
+  max-width: 320px;        /* raise/lower for size */
+  height: auto;
+  margin-bottom: 6px;      /* small gap above tools */
+}
+
+/* tools sit right under the logo */
+.intro__tools{
+  grid-column: 1; grid-row: 2;
+  margin-top: -70px;       /* pull up ≈70-100 px – tweak to taste */
+  text-align: center;
+}
+.tools__list img{ height: 46px; width: auto; }  /* icon size */
+
+/* copy / timeline on the right half */
+.intro__copy{
+  grid-column: 2;
+  max-width: 720px;
+  text-align: left;
+  justify-self: start;     /* prevents centring inside col-2 */
+}
+
+/* ──  mobile: collapse to single column  ─────────────────────────── */
+@media (max-width: 820px){
+  .internship__intro{
+    grid-template-columns: 1fr;
+    padding-inline: 4vw;
+  }
+  .intro__logo,
+  .intro__tools,
+  .intro__copy{ grid-column: 1; }
+  .intro__tools{ margin-top: 0; }
+}
+/* ── Timeline line centred in circles + arrow ───────────────── */
+
+/* 1 ▸ keep circles 12 px tall; line now runs through their centre */
+.timeline{
+  position: relative;               /* keep for ::before/::after */
+  display: flex;
+  gap: 32px;
+  /* … your existing props unchanged … */
+}
+
+/* horizontal line */
+.timeline::before{
+  content: "";
+  position: absolute;
+  top: 7px;                         /* 12 px circle → centre at 6 px */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #000;    
+  opacity: 1;                /* same colour as before */
+}
+
+/* 2 ▸ arrow-head at right end of the line */
+.timeline::after{
+  content: "";
+  position: absolute;
+  top: 2px;                         /* align with line centre */
+  right: 0px;                      /* half the arrow width past the edge */
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transform: rotate(-45deg);                    /* tweak if needed */
+}
+
+/* circle styling stays the same */
+.timeline li::before{
+  /* 12 px circle */
+  width: 12px;
+  height: 12px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 0; left: 50%;
+  translate: -50% 0;
+}
+/* ── lift logo + tools column up by 50 px ─────────────────────────── */
+
+/* move the column upward */
+.intro__logo{
+  margin-top: -10px;   /* raise logo */
+}
+
+/* keep the same relative gap between logo and tools */
+.intro__tools{
+  margin-top: calc(-80px - 25px);  /* original -70px minus 50px extra lift */
+}
+/* ── Objective / subsequent internship blocks ─────────────── */
+
+/* 1 ▸ equal left / right padding (matches intro grid) */
+.internship-block{
+  padding-inline: 4vw;          /* same side-space as intro above */
+  margin-bottom: 64px;          /* keep existing vertical rhythm */
+}
+
+/* 2 ▸ let the descriptive text span full width of its column */
+.internship-block .block__text{
+  max-width: none;              /* remove 60ch constraint */
+}
+/* ── extra gap before the first internship block (Objective) ── */
+.internship-block:first-of-type{
+  margin-top: 50px;      /* raises the Objective section down by 50 px */
+}
+/* ── Wireframe: text left (35 %) · images right ───────────── */
+.wireframe-block{
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  gap: 0 36px;                       /* row · column gap */
+  align-items: start;
+  padding-inline: 4vw;               /* same side margins as Objective */
+}
+
+/* let text fill its (35 %) column */
+.wireframe-block .block__text{
+  max-width: none;
+}
+
+/* keep the image gallery on the right and show full width there */
+.wireframe-block .block__gallery{
+  justify-content: flex-start;       /* align left inside its column */
+}
+
+/* responsive: stack on narrow screens */
+@media (max-width: 820px){
+  .wireframe-block{
+    grid-template-columns: 1fr;
+  }
+  .wireframe-block .block__gallery{
+    margin-top: 24px;                /* breathe when stacked */
+  }
+}
+/* ── Wireframe block: text 35 % · image 65 % ─────────────── */
+.wireframe-block{
+  display: grid;
+  grid-template-columns: 35% 1fr;   /* left = text, right = image */
+  gap: 0 36px;                      /* row-gap · column-gap */
+  align-items: start;
+  padding-inline: 4vw;              /* same side margins as Objective */
+}
+
+/* let the paragraph fill its 35 % column (no extra max-width) */
+.wireframe-block .block__text{
+  max-width: none;
+}
+
+/* image on the right column, full width */
+.wireframe-block .block__gallery{
+  justify-content: flex-start;      /* align image to the left inside its column */
+}
+.wireframe-block .block__gallery img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;               /* keep your existing styling */
+}
+
+/* ── stack on small screens ──────────────────────────────── */
+@media (max-width: 820px){
+  .wireframe-block{
+    grid-template-columns: 1fr;     /* single column */
+  }
+  .wireframe-block .block__gallery{
+    margin-top: 24px;               /* breathing room when stacked */
+  }
+}
+/* ── Wireframe: TEXT left (35 %) · IMAGE right ── */
+.wireframe-block{
+  display: grid;
+  grid-template-columns: 35% 1fr;      /* left 35 % → text   | right → image */
+  gap: 0 36px;
+  align-items: start;
+  padding-inline: 4vw;
+}
+
+/* explicitly pin elements to the correct columns */
+.wireframe-block .block__text   { grid-column: 1; }
+.wireframe-block .block__gallery{ grid-column: 2; }
+
+/* text already uses the full 35 % column; keep it that way */
+.wireframe-block .block__text{ max-width: none; }
+
+/* image fills the right column */
+.wireframe-block .block__gallery img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* stack on small screens */
+@media (max-width: 820px){
+  .wireframe-block{ grid-template-columns: 1fr; }
+  .wireframe-block .block__gallery{ margin-top: 24px; }
+}
+/* ── Outcome: text left 35 % · overlapping images right ──────────── */
+.outcome-block{
+  display: grid;
+  grid-template-columns: 35% 1fr;   /* 35 % text  |  images */
+  gap: 0 40px;
+  align-items: start;
+  padding-inline: 4vw;              /* same side margins */
+}
+
+/* let the paragraph span the full 35 % column */
+.outcome-block .block__text{ max-width: none; }
+
+/* remove outline/box-shadow; prepare for overlay */
+.outcome-block .block__gallery{
+  position: relative;               /* establishes containing block */
+}
+.outcome-block .block__gallery img{
+  width: 100%; height: auto;
+  border: none; box-shadow: none;   /* no outlined containers */
+  border-radius: 8px;
+}
+
+/* overlay the laptop image slightly over the mobile image */
+.outcome-laptop{
+  position: absolute;
+  left: -10%;         /* tweak until the overlap looks right */
+  top: 0;
+  width: 60%;         /* laptop is smaller, overlaid */
+  z-index: 2;
+}
+.outcome-mobile{
+  width: 85%;         /* base image */
+}
+
+/* ── stack on narrow screens ─────────────────────────────── */
+@media (max-width: 820px){
+  .outcome-block{ grid-template-columns: 1fr; }
+  .outcome-laptop{
+    position: relative;
+    left: 0;           /* no overlay when stacked */
+    width: 70%;
+    margin: 0 auto -40px;  /* sits partly over the mobile image */
+  }
+  .outcome-mobile{
+    width: 100%;
+  }
+  .outcome-block .block__gallery{ margin-top: 24px; }
+}
+
+/* explicitly assign each element to its column */
+.outcome-block .block__text    { grid-column: 1; }
+.outcome-block .block__gallery { grid-column: 2; top:-5%; left: 30%; width: 70%;}
+
+/* nothing else changes (overlay / responsiveness remain intact) */
+/* ── Outcome image-size + overlap tune ────────────────────── */
+
+/* mobile (base) image a little smaller */
+.outcome-mobile{
+  width: 70%;                 /* was 85 % */
+}
+
+/* laptop image smaller and shifted further left */
+.outcome-laptop{
+  width: 30%;                 /* was 60 %  → overall smaller */
+  left: -80%;               /* shift ≈250 px left; adjust to taste */
+}
+
+/* ── keep stacked layout nice on ≤820 px screens ─────────── */
+@media (max-width: 820px){
+  .outcome-laptop{
+    left: 0;                  /* centred when stacked */
+    width: 70%;               /* same visual weight as before */
+    margin: 0 auto -40px;
+  }
+}
+/* ─── baseline for every skill blob ───────────────────────── */
+.skill{
+  position: absolute;         /* each parent block is relative-scoped below */
+  width: 180px;               /* global default size – adjust once */
+  max-width: 35vw;            /* prevents oversize on mobile */
+}
+.skill img{
+  width: 100%;
+  height: auto;
+}
+
+/* ─── OBJECTIVE block – blob on right of flowchart ────────── */
+.objective-block{ position: relative; }            /* create containing context */
+.skill-objective{
+  right: 200px; transform: translateY(-100%);
+  width: 20%;
+}
+
+/* ─── WIREFRAME block – blob under text, left col ─────────── */
+.wireframe-block{ position: relative; }
+.skill-wireframe{
+  left: 50px; top: 65%;
+  width: 25%;
+  transform: translateY(-50%);
+}
+
+/* ─── OUTCOME block – blob under text, left col ───────────── */
+.outcome-block{ position: relative; }
+.skill-outcome{
+  left: 50px; top: 65%;
+  width: 20%;
+  transform: translateY(-50%);
+}
+
+/* ─── responsive: shrink & stack gracefully ───────────────── */
+@media(max-width: 820px){
+  .skill{
+    position: relative;       /* stop absolute -- flows with content */
+    left: 0; right: 0;
+    margin: 32px auto 0;
+    width: 160px;
+  }
+}
+.internship-box{
+  background: #d9d9d9;
+  border-radius: 45px;
+  padding: 56px 4vw;             /* inner breathing room + side padding */
+  margin-bottom: 64px;           /* space before Objective block */
+}
+/* ───────────  GOAL SECTION  ─────────── */
+.goals{
+  padding-inline: 4vw;
+  margin-block: 96px 64px;
+}
+.goals__heading{
+  font-size: clamp(36px, 6vw, 72px);
+  margin: 0 0 12px 0;
+  font-weight: 400;               /* Alata single weight */
+}
+.goals__sub{
+  margin: 0 0 48px 0;
+  font-size: clamp(16px,1.6vw,20px);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+/* responsive card grid */
+.goals__grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 40px;
+}
+
+/* ── Flip-card styling ───────────────── */
+.card{
+  perspective: 1000px;
+  outline: none;                  /* makes tab-focus cleaner */
+}
+.card__inner{
+  position: relative;
+  width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .6s;
+}
+.card:hover .card__inner,
+.card:focus-within .card__inner{
+  transform: rotateY(180deg);
+}
+.card__front,
+.card__back{
+  position: absolute;
+  inset: 0;
+  padding: 48px 36px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 45px;
+  backface-visibility: hidden;
+}
+.card__front{
+  background: #000;
+  color: #fff;
+}
+.goal__title{
+  font-size: clamp(22px,2.5vw,30px);
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 12px;
+}
+.goal__text{
+  margin: 0;
+  font-size: clamp(15px,1.5vw,18px);
+  line-height: 1.7;
+}
+
+/* back face */
+.card__back{
+  background: #2d2d2d;            /* slightly lighter */
+  color: #fff;
+  text-align: center;
+  font-size: clamp(15px,1.5vw,18px);
+  padding: 48px 36px;
+  transform: rotateY(180deg);
+}
+
+/* shadow on hover */
+.card:hover,
+.card:focus-within{
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* mobile tweaks */
+@media (max-width:600px){
+  .goals__sub{ max-width: none; }
+}
+/* ── Fix: make goal cards taller & top-aligned ───────────── */
+
+/* let grid rows grow but stay equal height */
+.goals__grid{ grid-auto-rows: 1fr; }
+
+/* each card must be at least 340 px tall (adjust to taste) */
+.card{ min-height: 340px; }
+
+/* keep faces full-height and top-align their contents */
+.card__face{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   /* top, not centre */
+  padding: 52px 32px 56px;       /* extra breathing room */
+}
+/* ── remove card shadow on hover / focus ─────────── */
+.card:hover,
+.card:focus-within{
+  box-shadow: none;   /* previously: 0 10px 30px rgba(0,0,0,.35); */
+}
+/* ── center the goal-section heading & subtitle ───────────── */
+.goals__heading,
+.goals__sub{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ── bring the Goal-section upward ────────────────────────── */
+.goals{
+  /* top-margin ↓ from 96 px to 48 px (change to taste) */
+  margin-block-start: 24px;   /* distance from the section above */
+}
+/* ── Sticky site header ─────────────────────────────── */
+/* targets the <header> element that already contains your nav links */
+/* ── make the nav bar truly fixed ───────────────────────────── */
+header{
+  position: fixed;      /* stays in view for the whole page  */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;        /* above everything else             */
+  background: var(--bg);/* solid bg so content doesn’t show  */
+
+}
+
+/* give the page breathing room so content isn’t hidden */
+body{
+  padding-top: 78px;    /* match your header’s height (adjust) */
+}
+html{
+  scroll-behavior: smooth;
+}
+/* ── Scroll-in motion helpers ─────────────────────────────── */
+.is-hidden{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* variant examples (optional) */
+[data-anim="fade-left"].is-hidden  { transform: translateX(-40px); }
+[data-anim="fade-right"].is-hidden { transform: translateX(40px); }
+[data-anim="zoom"].is-hidden       { transform: scale(.85); }
+/* ── FOOTER ────────────────────────────────────────── */
+.site-footer{
+  
+  padding:48px 4vw;
+  font-family:"Alata", sans-serif;
+}
+.footer__inner{
+  max-width:var(--maxw);
+  margin-inline:auto;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+/* name / copyright */
+.footer__name{
+  margin:0;
+  font-size:16px;
+  opacity:.8;
+}
+
+/* nav links */
+.footer__nav{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.footer__nav a{
+  text-decoration:none;
+  color:#000;
+  text-transform:lowercase;
+  opacity:.9;
+}
+.footer__nav a:hover{opacity:1;}
+
+/* icon */
+.footer__icon{
+  display:inline-flex;
+  align-items:center;
+  opacity:.9;
+}
+.footer__icon:hover{opacity:1;}

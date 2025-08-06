@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noah Chae | E-Portfolio</title>
+
+  <!-- Font: Alata -->
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav__link" href="#">home</a>
+      <a class="nav__link" href="#singapore">singapore</a>
+      <a class="nav__link" href="#internship">internship</a>
+      <a class="nav__link" href="#goals">goals</a>
+
+      <a class="nav__link nav__link--icon" aria-label="LinkedIn"
+         href="https://www.linkedin.com/in/noah-chae-955395328" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM7.11 20.45H3.86V9.32h3.25v11.13zM5.49 7.77c-1.04 0-1.88-.85-1.88-1.88s.84-1.88 1.88-1.88 1.88.85 1.88 1.88-.84 1.88-1.88 1.88zM20.46 20.45h-3.24v-5.42c0-1.29-.02-2.96-1.8-2.96-1.8 0-2.07 1.4-2.07 2.86v5.52h-3.24V9.32h3.11v1.52h.04c.43-.82 1.48-1.68 3.06-1.68 3.27 0 3.88 2.15 3.88 4.94v6.35z"/>
+        </svg>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+   <section id="home">
+  <main class="hero">
+    <div class="hero__inner">
+      <section class="hero__copy">
+        <h1 class="hero__title is-hidden" data-anim="zoom">Hi I’m Noah Chae</h1>
+        <p class="hero__subtitle">
+          I am a current third year at the University of Florida studying
+          Digital Arts &amp; Sciences with strong aspirations to become a UX designer.
+        </p>
+
+        <a class="button button--primary"
+           href="https://www.linkedin.com/in/noah-chae-955395328" target="_blank" rel="noopener">
+          <span>connect with me!</span>
+          <span class="button__icon" aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <!-- Photo with blob mask -->
+      <!-- inside .hero__inner -->
+        <figure class="hero__figure" aria-label="Noah portrait">
+        <img
+            src="../img/IMG_2767.png"
+            alt="Noah Chae portrait"
+            class="portrait"
+            width="2048" height="1822"   
+            decoding="async" loading="eager"
+        />
+        </figure>
+
+    </div>
+  </main>
+   </section>
+  <!-- My Singapore Experience -->
+<section id="singapore" class="section section--experience">
+  <h1 class="section-title is-hidden" data-anim="zoom">My Singapore Experience</h1>
+
+  	<figure class="video-card is-hidden">
+    <video class="video-card__media"
+           controls
+           preload="metadata"
+           playsinline
+           poster="../img/41614844d07c22c6d6acce6644003df7.JPG">
+      <source src="../img/singapore-discussion.mov" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <!-- Optional: <figcaption class="video-card__caption">Singaporean Culture – field clips</figcaption> -->
+  </figure>
+</section>
+<!-- Q&A section under the video -->
+<section class="section qa-section">
+  <div class="qa-container">
+    <!-- Item 1 -->
+    <article class="qa qa--media-right is-hidden" data-anim="fade-right">
+      <div class="qa__content">
+        <h3 class="qa__title">What did you learn about Singaporean culture?</h3>
+        <p class="qa__body">
+          I learned that the Singapore culture is a melting pot of numerous other cultures including Malay,
+          Chinese, Indian, Thai, and more. Singaporeans are often more collective and unified when it comes
+          to office culture. In my experience, the workspace was open, intentionally arranged to encourage
+          communication with peers, supervisors, and even the CEO.
+        </p>
+      </div>
+      <figure class="qa__media">
+        <img src="../img/discussion-1.png" alt="Cultural experiences in Singapore" />
+      </figure>
+    </article>
+
+    <!-- Item 2 -->
+    <article class="qa qa--media-left is-hidden" data-anim="fade-left">
+      <figure class="qa__media">
+        <img src="../img/discussion-2.png" alt="Challenges while abroad" />
+      </figure>
+      <div class="qa__content">
+        <h3 class="qa__title">What did you find challenging about studying and working abroad?</h3>
+        <p class="qa__body">
+          Assimilating to the “high-context” culture of Singapore was a challenge—directions were often broad and required reading between the lines. Early in my internship, a redesign concept needed major revision because my assumptions didn’t match the company’s vision. That experience taught me to ask clarifying questions sooner and validate alignment.
+        </p>
+      </div>
+    </article>
+
+    <!-- Item 3 -->
+    <article class="qa qa--media-right is-hidden" data-anim="fade-right">
+      <div class="qa__content">
+        <h3 class="qa__title">What were some lessons you learned through your experience?</h3>
+        <p class="qa__body">
+         Professionally, I learned valuable skills pertaining to working in a corporate environment where I had to develop soft skills such as being persistent with asking questions, empathizing with users, and being adaptable in uncomfortable circumstances. I also was able to learn the whole design process through the two main projects I had the opportunity to work on, as well as learn the importance of understanding the purpose of design in any situation.
+        </p>
+      </div>
+      <figure class="qa__media">
+        <img src="../img/discussion-3.png" alt="Team moments and project work" />
+      </figure>
+    </article>
+
+    <!-- Item 4 -->
+    <article class="qa qa--media-left is-hidden" data-anim="fade-left">
+      <figure class="qa__media">
+        <img src="../img/discussion-4.png" alt="Applying intercultural skills at UF" />
+      </figure>
+      <div class="qa__content">
+        <h3 class="qa__title">How will you use your intercultural experience when you return to UF?</h3>
+        <p class="qa__body">
+          At UF, I will bring a global lens when it comes to communication, understanding that many people have different styles of communication. I must be willing to adapt and allow myself to be teachable, both things that I believe I was able to grow during my time in Singapore. 
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+<!-- ─────────────  MY INTERNSHIP EXPERIENCE  ───────────── -->
+<section id="internship" class="section internship">
+
+  	<h2 class="section-heading is-hidden" data-anim="zoom">My Internship Experience</h2>
+<div class="internship-box">
+  <!-- Top row ─ logo, description, tools -->
+  <div class="internship__intro">
+    <figure class="intro__logo">
+      <img src="../img/logo.png" alt="Silversea Media logo" />
+    </figure>
+
+    <div class="intro__copy">
+      <p>
+        Silversea Media builds digital twin solutions for businesses. Their platform (MetaTwin 3D) is used to digitize spaces and objects for various things like education, tourism, and real estate. My role in this company was to redesign their main website to create more opportunities for B2B sales.
+      </p>
+
+      <!-- Simple 3-point timeline -->
+      <ol class="timeline">
+        <li><span><strong>June 2025</strong></span> <br>Started main website rebuild &amp; redesign.</li>
+        <li><span><strong>July 2025</strong></span> <br>Finished new website &amp; metaverse platform UI.</li>
+        <li><span><strong>Aug 2025</strong></span>  <br>Designed UI of water-treatment plant system.</li>
+      </ol>
+    </div>
+
+    <!-- Tools used -->
+    <aside class="intro__tools">
+      <h3 class="tools__title">Tools</h3>
+      <ul class="tools__list">
+        <li><img src="../img/figma.svg" alt="Figma"></li>
+        <li><img src="../img/adobe-photoshop-svgrepo-com.svg"    alt="Photoshop"></li>
+        <li><img src="../img/adobe-illustrator-svgrepo-com.svg"    alt="Illustrator"></li>
+        <li><img src="../img/canva.svg" alt="Canva"></li>
+        <li><img src="../img/openai.svg"   alt="ChatGPT"></li>
+      </ul>
+    </aside>
+</div>
+  </div>
+
+  <!-- Objective + flow diagram -->
+  <section class="internship-block">
+    <h3 class="block__title">Objective</h3>
+    <p class="block__text">
+      The primary objectives of the website are to attract clients, clearly communicate the platform’s value proposition, and drive conversions through two main calls-to-action: “Contact Us” (to initiate sales inquiries) and “Get Started” (to view pricing plans or begin a trial).
+    </p>
+    <figure class="block__media">
+      <img src="../img/flowchart.png" alt="Site flowchart diagram">
+    </figure>
+    <figure class="skill skill-objective">
+  <img src="../img/skill-1.png"
+       alt="Skill – Customer Journey Mapping and UX Research">
+</figure>
+  </section>
+
+  <!-- Wireframe -->
+  <section class="internship-block wireframe-block">
+    <h3 class="block__title">Wireframe</h3>
+    <p class="block__text">
+      This wireframe is a low-fidelity visual layout that outlines the structure of the Metaverse website; the wireframe serves as a blueprint that focuses on functionality, content placement, and user flow, rather than detailed visuals or branding.
+    </p>
+    <figure class="block__gallery">
+      <img src="../img/wireframe.png" alt="Wireframe screen 1">
+    </figure>
+    <figure class="skill skill-wireframe">
+    <img src="../img/skill-2.png"
+         alt="Skill – Empathy, Problem-Solving, Wireframing, UI Design">
+  </figure>
+  </section>
+
+  <!-- Outcome -->
+  <section class="internship-block outcome-block">
+    <h3 class="block__title">Outcome</h3>
+    <p class="block__text">
+      Blue and purple were chosen as the primary colors for the design system to showcase a modern and tech feel. The platform enables corporate clients to create custom virtual environments to showcase and sell their products. 
+    </p>
+    <figure class="block__gallery">
+      <img src="../img/floating-macbook-air-mockup.png" alt="laptop mockups" class="outcome-laptop">
+      <img src="../img/outcome.png" alt="Final mobile screens" class="outcome-mobile">
+    </figure>
+    <figure class="skill skill-outcome">
+    <img src="../img/skill-3.png"
+         alt="Skill – Prototyping and Corporate Identity">
+  </figure>
+  </section>
+</section>
+<!-- GOAL SETTING ACHIEVEMENTS -->
+<section  id="goals" class="section goals">
+  <h2 class="goals__heading">Goal Setting Achievements</h2>
+  <p class="goals__sub">
+    Short-term and long-term goals that I have set for myself and how I have
+    accomplished them.
+  </p>
+
+  <div class="goals__grid">
+    <!-- Card 1 -->
+    <article class="card goal" tabindex="0">
+      <div class="card__inner">
+        <!-- front -->
+        <div class="card__front">
+          <h3 class="goal__title">Goal&nbsp;1</h3>
+          <p class="goal__text">
+            I will design the solutions and homepage in Figma for my role at
+            Silversea Media and deliver the prototype to my supervisor by
+            June&nbsp;20.
+            <br>
+            <br>
+          </p>
+        </div>
+        <!-- back -->
+        <div class="card__back">
+          <p>
+            ✅ This goal was accomplished with the addition of 2 other pages, the 'contact' and 'about us' pages by the deadline. 
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card goal" tabindex="0">
+      <div class="card__inner">
+        <div class="card__front">
+          <h3 class="goal__title">Goal&nbsp;2</h3>
+          <p class="goal__text">
+            I will grab lunch with 2 supervisors at work by June 20. (Yu Jie and Niu)
+            <br>
+            <br>
+            <br>
+            <br>
+          </p>
+        </div>
+        <div class="card__back">
+          <p>
+            ✅ Ran <strong>4</strong> I was able to connect with and eat lunch with my supervisors on multiple occasions. 
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card goal" tabindex="0">
+      <div class="card__inner">
+        <div class="card__front">
+          <h3 class="goal__title">Goal&nbsp;3</h3>
+          <p class="goal__text">
+            I will design the whole front-end website of the company, designed in figma and executed through react framework, by August 2.
+          </p>
+        </div>
+        <div class="card__back">
+          <p>
+            ✅ The whole front-end of the website has been developed, along with two other projects that I was able to complete additionally. 
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="card goal" tabindex="0">
+      <div class="card__inner">
+        <div class="card__front">
+          <h3 class="goal__title">Goal&nbsp;4</h3>
+          <p class="goal__text">
+            I will land a paid job or internship or co-op by next summer as a UI/UX designer.
+            <br>
+            <br>
+            <br>
+          </p>
+        </div>
+        <div class="card__back">
+          <p>
+            ❌ This goal being set as a long-term goal has not been accomplished yet. I am however actively working towards achieving this goal by revising my portfolio and applying to jobs as soon as postings come out. 
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+<!-- ─────────────  FOOTER  ───────────── -->
+<footer class="site-footer">
+  <div class="footer__inner">
+    <p class="footer__name">© 2025 Noah Chae</p>
+
+
+    <a href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noopener"
+       aria-label="LinkedIn" class="footer__icon">
+      <!-- simple inline SVG icon -->
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM7.11 20.45H3.86V9.32h3.25v11.13zM5.49 7.77a1.88 1.88 0 1 1 0-3.76 1.88 1.88 0 0 1 0 3.76zM20.46 20.45h-3.24v-5.42c0-1.29-.02-2.96-1.8-2.96-1.8 0-2.07 1.4-2.07 2.86v5.52h-3.24V9.32h3.11v1.52h.04c.43-.82 1.48-1.68 3.06-1.68 3.27 0 3.88 2.15 3.88 4.94v6.35z"/>
+      </svg>
+    </a>
+  </div>
+</footer>
+
+<script src="scripts.js" defer></script>
+
+
+</body>
+</html>
