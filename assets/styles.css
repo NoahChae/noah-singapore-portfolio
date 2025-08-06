@@ -138,7 +138,7 @@ html, body {
 .video-card {
   margin: 0 auto;
   width: min(960px, 92vw);
-  background: #efefef;
+  background: #000000;
   border-radius: 20px;
   padding: 18px;
   display: grid;
@@ -195,8 +195,8 @@ html, body {
 /* Typography */
 .qa__title {
   margin: 0 0 8px 0;
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: 400;             /* Alata uses one weight */
+  font-size: clamp(27px, 3vw, 33px);
+  font-weight: 600;             /* Alata uses one weight */
   letter-spacing: -0.01em;
 }
 
@@ -313,6 +313,7 @@ html, body {
 .intro__copy p {
   margin: 0;
   line-height: 1.6;
+  color: #ffffff;
 }
 .intro__copy .highlight { font-weight: 600; }
 
@@ -332,14 +333,14 @@ html, body {
   left: 0;
   right: 0;
   height: 2px;
-  background: #000;
-  opacity: .15;
+  background: #ffffff;
 }
 .timeline li {
   position: relative;
   padding-top: 28px;
   max-width: 180px;
   font-size: 14px;
+  color: #ffffff;
 }
 .timeline li::before {
   content: "";
@@ -347,14 +348,14 @@ html, body {
   top: 0; left: 50%;
   translate: -50% 0;
   width: 12px; height: 12px;
-  border: 2px solid #000;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   background: #fff;
 }
 
 /* tools list */
 .intro__tools { text-align: center; }
-.tools__title { margin: 0 0 12px 0; font-size: 16px; }
+.tools__title { margin: 0 0 12px 0; font-size: 16px; color: white;}
 .tools__list {
   display: flex;
   flex-wrap: wrap;
@@ -536,7 +537,7 @@ html, body {
   left: 0;
   right: 0;
   height: 2px;
-  background: #000;    
+  background: #ffffff;    
   opacity: 1;                /* same colour as before */
 }
 
@@ -548,8 +549,8 @@ html, body {
   right: 0px;                      /* half the arrow width past the edge */
   width: 10px;
   height: 10px;
-  border-right: 2px solid #000;
-  border-bottom: 2px solid #000;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
   transform: rotate(-45deg);                    /* tweak if needed */
 }
 
@@ -558,9 +559,9 @@ html, body {
   /* 12 px circle */
   width: 12px;
   height: 12px;
-  border: 2px solid #000;
+  border: 2px solid #ffffff;
   border-radius: 50%;
-  background: #fff;
+  background: #000000;
   position: absolute;
   top: 0; left: 50%;
   translate: -50% 0;
@@ -800,7 +801,7 @@ html, body {
   }
 }
 .internship-box{
-  background: #d9d9d9;
+  background: #000;
   border-radius: 45px;
   padding: 56px 4vw;             /* inner breathing room + side padding */
   margin-bottom: 64px;           /* space before Objective block */
@@ -1024,7 +1025,7 @@ html{
 
 /* container with light grey bg & rounded corners */
 .resume__frame{
-  background:#d9d9d9;
+  background:#000000;
   border-radius:45px;
   padding:32px;
   overflow:hidden;
